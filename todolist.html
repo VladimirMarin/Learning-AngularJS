@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDoApp</title>
+    <meta charset="utf-8">
+    <script src="Angular.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="todoCtrl">
+<h1 style="text-align: center;">To Do App</h1>
+<h2 style="text-align: center;">Add a task</h2>
+<div style="background-color: rgb(2 , 3 , 5 ,6);">
+<form ng-submit="todoAdd()" style="text-align: center;">
+    <input type="text" ng-model="todoInput" size="15px"
+     placeholder="Add new" style="margin: 0px auto; width: 300px">
+</form><br>
+
+<div ng-repeat="x in todoList" style=";  text-align: center; display: block;padding-right:15px;padding-right: 10px;
+  padding-left: 22px; ">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+
+<p style="text-align: center;"><button ng-click="remove()">Remove marked</button></p>
+</div>
+</body>
+</html>
